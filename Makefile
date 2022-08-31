@@ -5,6 +5,6 @@ install: # установить зависимости
 brain-games: # запустить игру
 	node bin/brain-games.js
 
-npm install: # очистить общее хранилище от учебных пакетов
-	--dry-run
+publish: # публиковать проект без захламления общего хранилища учебными пакетами
+	npm publish --dry-run
 
