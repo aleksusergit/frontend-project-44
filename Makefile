@@ -8,3 +8,6 @@ brain-games: # запустить игру
 publish: # публиковать проект без захламления общего хранилища учебными пакетами
 	npm publish --dry-run
 
+make lint:
+	npx eslint .
+
