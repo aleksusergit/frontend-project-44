@@ -9,7 +9,7 @@ const playCalcGame = () => {
     const element1 = generatorRandom(100);
     const element2 = generatorRandom(100);
 
-    const signs = ['+', '-', '*'];
+    const signs = ['', '+', '-', '*'];
     const sign = signs[generatorRandom(3)];
 
     const question = `${element1} ${sign} ${element2}`;
