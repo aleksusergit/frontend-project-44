@@ -10,3 +10,5 @@
 [brain-gcd](https://asciinema.org/a/jIy3lINm8UR7cQdf24r9WgzGv)
 
 [brain-progression](https://asciinema.org/a/c7p1UxExHzKrd4oQiVcWJY9Dj)
+
+[brain-prime](https://asciinema.org/a/FkNhVtcG1atYL1EN7hOfCcfW3)
