@@ -9,7 +9,7 @@ const baseOfGame = (nameOfGame, noteToTask, countIter) => {
 
   for (let iter = 0; iter < 3; iter += 1) {
     const questionWithResult = countIter();
-    console.log('Question: ', questionWithResult[0]);
+    console.log('Question:', questionWithResult[0]);
     // console.log(questionWithResult[1]);
     const answerUser = readlineSync.question('Your answer: ');
 
