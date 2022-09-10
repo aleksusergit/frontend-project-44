@@ -6,7 +6,7 @@ const playCalcGame = () => {
   const noteToTask = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
   const game = () => {
-    const genNumber = generatorRandom(100);
+    let genNumber = generatorRandom(100);
     while (genNumber < 2) {
       genNumber = generatorRandom(100);
     }
@@ -16,7 +16,7 @@ const playCalcGame = () => {
         array.push(i);
       }
     }
-    let result = array.length === genNumber - 2 ? 'yes' : 'no';
+    const result = array.length === genNumber - 2 ? 'yes' : 'no';
 
     const question = genNumber;
     return [question, result];

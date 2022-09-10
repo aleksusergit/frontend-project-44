@@ -6,19 +6,3 @@ export default (range) => {
   const num = Math.floor(Math.random() * rand.length);
   return rand[num];
 };
-
-// export { generatorRandom };
-
-/* const generatorNumber = () => {
-  const num = Math.round(Math.random() * 100);
-  // console.log('Сгенерированное число = ', num);
-  return num;
-};
-const generatorSign = (arr = ['+', '-', '*']) => {
-  const rand = Math.floor(Math.random() * arr.length);
-  const sing = arr[rand];
-  // console.log(sing);
-  return sing;
-};
-// const arr = ['+', '-', '*'];
-*/
