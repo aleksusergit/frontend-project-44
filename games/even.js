@@ -1,19 +1,21 @@
 import baseOfGame from '../src/index.js';
-import generatorRandom from './genRandom.js';
+import { getRandomNumber } from './genRandom.js';
 
 const playEvenGame = () => {
-  const nameOfGame = 'brain-even';
-  const noteToTask = 'Answer "yes" if the number is even, otherwise answer "no".';
+  const gameCondition = 'Answer "yes" if the number is even, otherwise answer "no".';
+  const minRandomNumber = 0;
+  const maxRandomNumber = 100;
 
-  const gameIsEven = () => {
-    const number = generatorRandom(100);
+  const isEven = (number) => (number % 2 === 0);
+
+  const roundsCount = () => {
+    const number = getRandomNumber(minRandomNumber, maxRandomNumber);
     const question = `${number}`;
-    const result = number % 2 === 0 ? 'yes' : 'no';
-
+    const result = isEven(number) ? 'yes' : 'no';
     return [question, result];
   };
 
-  baseOfGame(nameOfGame, noteToTask, gameIsEven);
+  baseOfGame(gameCondition, roundsCount);
 };
 
 export default playEvenGame;
