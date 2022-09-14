@@ -1,7 +1,6 @@
 import readlineSync from 'readline-sync';
 
-const baseOfGame = (nameOfGame, gameCondition, countIter) => {
-  // console.log(nameOfGame, '\n');
+const baseOfGame = (gameCondition, roundsCount) => {
   console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
@@ -9,9 +8,8 @@ const baseOfGame = (nameOfGame, gameCondition, countIter) => {
 
   const attemptsCount = 3;
   for (let iter = 0; iter < attemptsCount; iter += 1) {
-    const [question, correctAnswer] = countIter();
+    const [question, correctAnswer] = roundsCount();
     console.log(`Question: ${question}`);
-    // console.log(correctAnswer);
     const userAnswer = readlineSync.question('Your answer: ');
 
     if (userAnswer !== correctAnswer) {

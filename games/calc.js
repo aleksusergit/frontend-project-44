@@ -1,5 +1,5 @@
 import baseOfGame from '../src/index.js';
-import { getRandomNumber, getRandomIndex } from './genRandom.js';
+import { getRandomNumber, getRandomIndex } from '../src/utils.js';
 
 const playCalcGame = () => {
   const gameCondition = 'What is the result of the expression?';
