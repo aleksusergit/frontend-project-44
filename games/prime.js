@@ -1,27 +1,29 @@
 import baseOfGame from '../src/index.js';
-import generatorRandom from './genRandom.js';
+import { getRandomNumber } from '../src/utils.js';
 
-const playCalcGame = () => {
-  const nameOfGame = 'brain-prime';
-  const noteToTask = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-
-  const game = () => {
-    let genNumber = generatorRandom(100);
-    while (genNumber < 2) {
-      genNumber = generatorRandom(100);
+const playGame = () => {
+  const gameCondition = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+  const minRangeOfNumber = 0;
+  const maxRangeOfNumber = 100;
+  const isPrime = (number) => {
+    if (number < 2) {
+      return false;
     }
-    const array = [];
-    for (let i = 2; i < genNumber; i += 1) {
-      if (genNumber % i !== 0) {
-        array.push(i);
+    const sqrtNumber = Math.sqrt(number);
+    for (let i = 2; i <= sqrtNumber; i += 1) {
+      if (number % i === 0) {
+        return false;
       }
     }
-    const result = array.length === genNumber - 2 ? 'yes' : 'no';
-
-    const question = genNumber;
+    return true;
+  };
+  const roundsCount = () => {
+    const generatedNumber = getRandomNumber(minRangeOfNumber, maxRangeOfNumber);
+    const result = isPrime(generatedNumber) ? 'yes' : 'no';
+    const question = generatedNumber;
     return [question, result];
   };
-  baseOfGame(nameOfGame, noteToTask, game);
+  baseOfGame(gameCondition, roundsCount);
 };
 
-export default playCalcGame;
+export default playGame;
