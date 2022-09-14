@@ -1,34 +1,45 @@
 import baseOfGame from '../src/index.js';
-import generatorRandom from './genRandom.js';
+import { getRandomNumber } from '../src/utils.js';
 
-const playCalcGame = () => {
-  const nameOfGame = 'brain-progression';
-  const noteToTask = 'What number is missing in the progression?';
+const completeTheProgression = () => {
+  const gameCondition = 'What number is missing in the progression?';
+  const minRangeForBegin = 0;
+  const maxRangeForBegin = 30;
+  const minRangeForStep = 1;
+  const maxRangeForStep = 7;
+  const minProgressionLength = 5;
+  const maxProgressionLength = 10;
 
-  const game = () => {
-    const startOfProgression = generatorRandom(30);
-    const stepOfProgression = generatorRandom(7);
-    const progressionLength = generatorRandom(5) + 5;
-    const endOfProgression = startOfProgression + stepOfProgression * progressionLength;
-
+  const getProgression = (begin, end, step) => {
     const progressionArray = [];
-    let progression = startOfProgression;
-    for (let i = startOfProgression; i < endOfProgression; i += stepOfProgression) {
+    let progression = begin;
+    for (let i = begin; i < end; i += step) {
       progressionArray.push(progression);
-      progression += Number(stepOfProgression);
+      progression += Number(step);
     }
+    return progressionArray;
+  };
 
-    const hiddenIndexArray = generatorRandom(progressionLength - 1);
-    const partOne = progressionArray.slice(0, hiddenIndexArray);
-    const partTwo = progressionArray.slice(hiddenIndexArray + 1);
-    const resultArray = partOne.concat('..', partTwo).join(' ');
+  const roundsCount = () => {
+    const beginOfProgression = getRandomNumber(minRangeForBegin, maxRangeForBegin);
+    const stepOfProgression = getRandomNumber(minRangeForStep, maxRangeForStep);
+    const progressionLength = getRandomNumber(minProgressionLength, maxProgressionLength);
+    const endOfProgression = beginOfProgression + stepOfProgression * progressionLength;
+    const progression = getProgression(beginOfProgression, endOfProgression, stepOfProgression);
+    const minRangeOfIndex = 0;
+    const maxRangeOfIndex = progression.length - 1;
+    const hiddenIndexOfArrayOfProgression = getRandomNumber(minRangeOfIndex, maxRangeOfIndex);
+    const hiddenNumber = progression[hiddenIndexOfArrayOfProgression];
+    const partOneOfProgression = progression.slice(0, hiddenIndexOfArrayOfProgression);
+    const partTwoOfProgression = progression.slice(hiddenIndexOfArrayOfProgression + 1);
+    const resultArray = partOneOfProgression.concat('..', partTwoOfProgression).join(' ');
 
     const question = resultArray;
-    const resultToString = String(progressionArray[hiddenIndexArray]);
+    const resultToString = String(hiddenNumber);
 
     return [question, resultToString];
   };
-  baseOfGame(nameOfGame, noteToTask, game);
+  baseOfGame(gameCondition, roundsCount);
 };
 
-export default playCalcGame;
+export default completeTheProgression;
