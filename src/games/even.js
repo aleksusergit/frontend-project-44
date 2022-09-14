@@ -1,5 +1,5 @@
-import baseOfGame from '../src/index.js';
-import { getRandomNumber } from '../src/utils.js';
+import baseOfGame from '../index.js';
+import { getRandomNumber } from '../utils.js';
 
 const playEvenGame = () => {
   const gameCondition = 'Answer "yes" if the number is even, otherwise answer "no".';
