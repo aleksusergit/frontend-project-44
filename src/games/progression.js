@@ -1,7 +1,7 @@
 import baseOfGame from '../index.js';
 import { getRandomNumber } from '../utils.js';
 
-const completeTheProgression = () => {
+const playProgressionGame = () => {
   const gameCondition = 'What number is missing in the progression?';
   const minRangeForBegin = 0;
   const maxRangeForBegin = 30;
@@ -42,4 +42,4 @@ const completeTheProgression = () => {
   baseOfGame(gameCondition, roundsCount);
 };
 
-export default completeTheProgression;
+export default playProgressionGame;
