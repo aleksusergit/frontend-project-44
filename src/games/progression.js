@@ -1,5 +1,5 @@
 import baseOfGame from '../index.js';
-import { getRandomNumber } from '../utils.js';
+import getRandomNumber from '../utils.js';
 
 const playProgressionGame = () => {
   const gameCondition = 'What number is missing in the progression?';
