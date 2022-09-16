@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 
-const baseOfGame = (gameCondition, roundsCount) => {
+const getBase = (gameCondition, roundsCount) => {
   console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
@@ -22,4 +22,4 @@ const baseOfGame = (gameCondition, roundsCount) => {
   console.log(`Congratulations, ${userName}!`);
 };
 
-export default baseOfGame;
+export default getBase;
