@@ -11,23 +11,11 @@ const maxProgressionLength = 10;
 
 const getProgression = (begin, end, step) => {
   const progression = [];
-  let result = begin;
-  for (let i = begin; i < end; i += step) {
-    progression.push(result);
-    result += Number(step);
+  for (let i = 0; begin + i < end; i += step) {
+    progression.push(begin + i);
   }
   return progression;
 };
-/* const getProgression = (begin, end, step) => {
-  console.log(begin, end, step);
-  const progression = [];
-  let result = begin;
-  for (let i = 0; i < end; i += step) {
-    progression.push(result);
-    result += Number(step);
-  }
-  return progression;
-}; */
 
 const getRound = () => {
   const beginOfProgression = getRandomNumber(minRangeForBegin, maxRangeForBegin);
