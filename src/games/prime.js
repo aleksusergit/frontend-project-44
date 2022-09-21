@@ -1,9 +1,10 @@
 import getBase from '../index.js';
 import getRandomNumber from '../utils.js';
 
-const gameCondition = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 const minRangeOfNumber = 0;
 const maxRangeOfNumber = 100;
+
 const isPrime = (number) => {
   if (number < 2) {
     return false;
@@ -24,8 +25,8 @@ const getRound = () => {
   return [question, result];
 };
 
-const playGame = () => {
-  getBase(gameCondition, getRound);
+const playPrimeGame = () => {
+  getBase(description, getRound);
 };
 
-export default playGame;
+export default playPrimeGame;

@@ -1,7 +1,7 @@
 import getBase from '../index.js';
 import getRandomNumber from '../utils.js';
 
-const gameCondition = 'Find the greatest common divisor of given numbers.';
+const description = 'Find the greatest common divisor of given numbers.';
 const minRandomNumber = 1;
 const maxRandomNumber = 30;
 
@@ -16,7 +16,7 @@ const getRound = () => {
 };
 
 const playGcdGame = () => {
-  getBase(gameCondition, getRound);
+  getBase(description, getRound);
 };
 
 export default playGcdGame;

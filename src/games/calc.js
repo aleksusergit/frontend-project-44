@@ -1,7 +1,7 @@
 import getBase from '../index.js';
 import getRandomNumber from '../utils.js';
 
-const gameCondition = 'What is the result of the expression?';
+const description = 'What is the result of the expression?';
 const minRandomNumber = 0;
 const maxRandomNumber = 20;
 const signs = ['+', '-', '*'];
@@ -31,7 +31,7 @@ const getRound = () => {
 };
 
 const playCalcGame = () => {
-  getBase(gameCondition, getRound);
+  getBase(description, getRound);
 };
 
 export default playCalcGame;

@@ -1,7 +1,7 @@
 import getBase from '../index.js';
 import getRandomNumber from '../utils.js';
 
-const gameCondition = 'Answer "yes" if the number is even, otherwise answer "no".';
+const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 const minRandomNumber = 0;
 const maxRandomNumber = 100;
 
@@ -14,7 +14,7 @@ const getRound = () => {
 };
 
 const playEvenGame = () => {
-  getBase(gameCondition, getRound);
+  getBase(description, getRound);
 };
 
 export default playEvenGame;

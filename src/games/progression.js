@@ -1,7 +1,7 @@
 import getBase from '../index.js';
 import getRandomNumber from '../utils.js';
 
-const gameCondition = 'What number is missing in the progression?';
+const description = 'What number is missing in the progression?';
 
 const getProgression = (begin, length, step) => {
   const progression = [];
@@ -25,7 +25,7 @@ const getRound = () => {
   return [question, rightAnswer];
 };
 const playProgressionGame = () => {
-  getBase(gameCondition, getRound);
+  getBase(description, getRound);
 };
 
 export default playProgressionGame;
